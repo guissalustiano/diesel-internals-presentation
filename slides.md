@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: seriph
 title: Diesel Internal
 layout: cover
 transition: slide-left
@@ -178,7 +178,6 @@ layout: cover
 # Diesel AST
 
 ---
-layout: cover
 lever: 2
 ---
 
@@ -345,13 +344,13 @@ layout: section
 ---
 # Expression Trait
 A marker trait representing a typed SQL fragment
-```rust
+```rust 
 pub trait Expression {
     type SqlType;
 }
 ```
 
-```rust
+```rust {full|*}
 impl<L, R> Expression for Eq<L, R> {
     type SqlType = Bool;
 }
@@ -381,7 +380,7 @@ trait QueryDsl  {
 }
 ```
 
-```rust {6-16|all}
+```rust {5-16|all}
 pub trait BoolOrNullableBool {}
 impl BoolOrNullableBool for Bool {}
 impl BoolOrNullableBool for Nullable<Bool> {}
